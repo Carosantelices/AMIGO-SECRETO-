@@ -1,0 +1,225 @@
+:root {
+    --color-primary: #4B69FD;
+    --color-secondary: #FFF9EB;
+    --color-button: #fe652b;
+    --color-button-hover: #e55720;
+    --color-result-bg: #000000;
+    --color-result-border: #FFD700;
+    --color-name-bg: #fe652b;
+    --color-name-text: #FFFFFF;
+}
+
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background-color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    max-width: 768px;
+    padding: 10px;
+}
+
+/* Encabezado */
+.header-banner {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.main-title {
+    color: var(--color-secondary);
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* Entrada de datos */
+.input-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--color-secondary);
+}
+
+.input-wrapper {
+    display: flex;
+    margin-top: 15px;
+}
+
+.input-name {
+    padding: 10px;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid var(--color-secondary);
+    font-size: 16px;
+}
+
+.button-add {
+    background-color: var(--color-button);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 0 10px 10px 0;
+    border: none;
+    cursor: pointer;
+}
+
+.button-add:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Nombres */
+.name-grid-container {
+    width: 100%;
+    margin-top: 15px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.name-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.name-item {
+    background-color: var(--color-name-bg);
+    color: var(--color-name-text);
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    white-space: nowrap;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Botón sortear */
+.button-draw {
+    margin-top: 20px;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 20px;
+    background-color: var(--color-button);
+    color: white;
+    cursor: pointer;
+}
+
+.button-draw:hover {
+    background-color: var(--color-button-hover);
+}
+
+/* Contenedor de resultado */
+.result-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-result-bg);
+    border: 5px solid var(--color-result-border);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    z-index: 1000;
+    box-shadow: 0 0 15px var(--color-result-border);
+}
+
+.result-container.hidden {
+    display: none;
+}
+
+.result-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--color-result-border);
+}
+
+.result-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.button-restart,
+.button-vote-again,
+.button-close {
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: white;
+}
+
+.button-restart {
+    background-color: #e53935;
+}
+
+.button-vote-again {
+    background-color: #43a047;
+}
+
+.button-close {
+    background-color: #2196F3;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 600px) {
+    .main-title {
+        font-size: 28px;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .input-wrapper {
+        flex-direction: column;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+    .input-name {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .button-add {
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .name-grid-container {
+        max-height: 120px;
+    }
+
+    .button-draw {
+        font-size: 16px;
+    }
+}
